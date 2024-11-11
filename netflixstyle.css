@@ -1,0 +1,574 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  html{
+      scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #141414;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    width: 100px;
+    margin-right: 2rem;
+    position: fixed;
+    z-index: 3;
+    margin-top: 50px;
+  }
+  
+  .nav-links {
+    position: fixed;
+    list-style: none;
+    display: flex;
+    gap: 3.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #b3b3b3;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .navbar-mid {
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 0.5rem 0 calc(0.25rem + 0.5rem);
+    display: flex;
+    box-sizing: border-box;
+    width: 50%;
+    height: 50px;
+    margin-left: 25%;
+    position: fixed;
+    z-index: 50;
+    margin-top: 50px;
+  }
+  
+  .language-selector {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    width: auto;
+    gap: 5px;
+    position: fixed;
+    margin-left: 80%;
+    margin-top: 50px;
+  }
+  
+  .language-selector select {
+    padding-left: 40px;
+    background-color: black;
+    color: white;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .language-selector select option {
+    background-color: white;
+    color: black;
+    font-size: 1.2rem;
+  }
+  
+  .sign-in-btn {
+    background-color: #f1efef;
+    color: #0f0f0f;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .sign-in-btn:hover {
+    background-color: #f40612;
+  }
+  
+  /* Hero Section Styling */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    position: relative;
+    z-index: -1;
+  }
+  
+  .bcard {
+    position: absolute;
+    bottom: 90px;
+    left: 60px;
+    width: 90%;
+    height: 500px;
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/61b94313-a53b-4a73-b973-7632aafc9d8f/web_tall_panel/IN-en-20241104-TRIFECTA-perspective_5e478a9d-0baf-4a93-8987-7a8ebf6f7fe8_large.jpg"); /* Add the path to your background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+  }
+  
+  .bgover {
+    position: absolute;
+    bottom: 90px;
+    left: 0px;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    top: 0px;
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.9) 29.25%,
+      rgba(0, 0, 0, 0.4) 64.5%
+    );
+  }
+  
+  .hero-text h1 {
+    font-size: 4.5rem;
+    margin-top: 290px;
+    width: 50%;
+    margin-left: 25%;
+  }
+  
+  .hero-text p {
+    font-size: 1.25rem;
+    color: #b3b3b3;
+    margin-top: 0.5rem;
+  }
+  #herobg {
+    filter: blur(80px);
+    z-index: -1;
+  }
+  
+  /* Get Started Section */
+  .getstarted {
+    display: flex;
+    align-items: center;
+    margin-top: 50%;
+    gap: 12px;
+  }
+  
+  .getstarted input[type="email"] {
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid white;
+    outline: none;
+    color: #fff;
+    background-color: #171717;
+  
+    font-size: 1.2rem;
+    width: 500px;
+    height: 60px;
+  }
+  
+  .getstarted input[type="email"]::placeholder {
+    color: #b3b3b3;
+  }
+  
+  .getstarted input[type="email"]:focus {
+    border-color: #e50914;
+  }
+  
+  .getstarted-btn {
+    padding: 0.8rem 1.5rem;
+    height: 60px;
+    width: 200px;
+    border: none;
+    border-radius: 50px 50px;
+    border-color: #fff;
+    border-width: 12px;
+    background-color: #e50914;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .getstarted-btn:hover {
+    background-color: #f40612;
+  }
+  
+  /* Section Wise Styling - trending and only */
+  
+  .secHead {
+    font-family: inherit;
+    font-size: 2rem;
+    color: white;
+    margin-left: 50px;
+    font-weight: 700;
+    padding-top: 150px;
+  }
+  .trending,
+  .only {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+  
+  .card {
+    width: 220px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  /*  Plan Card styling */
+  .PlanCards {
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: left;
+    gap: 20px;
+    overflow-y: hidden;
+    padding: 20px;
+  }
+  .card1 {
+    background: linear-gradient(
+      to bottom right,
+      rgb(31, 26, 97),
+      rgb(31, 5, 124),
+      rgb(11, 1, 56)
+    );
+    color: white;
+    border-radius: 15px;
+    border: 2px solid rgb(46, 39, 143);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card2 {
+    background: linear-gradient(
+      to bottom right,
+      rgb(21, 18, 67),
+      rgb(23, 4, 93),
+      rgb(9, 1, 46)
+    );
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(46, 39, 143);
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card3 {
+    background: linear-gradient(
+      to bottom right,
+      rgb(83, 26, 97),
+      rgb(87, 12, 158),
+      rgb(82, 2, 107)
+    );
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(88, 39, 143);
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card4 {
+    background: linear-gradient(
+      to bottom right,
+      rgb(89, 26, 97),
+      rgb(80, 5, 124),
+      rgb(11, 1, 56)
+    );
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(126, 39, 143);
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .PlanCards h2,
+  h3,
+  p {
+    margin: auto;
+  }
+  
+  .PlanCards .checkicon {
+    margin-right: 8px;
+    height: 20px;
+    width: 20px;
+  }
+  
+  .card1:hover {
+    background: linear-gradient(
+      to bottom right,
+      rgb(66, 56, 197),
+      rgb(44, 8, 172),
+      rgb(11, 1, 56)
+    );
+    transform: scale(1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card2:hover {
+    background: linear-gradient(
+      to bottom right,
+      rgb(47, 40, 143),
+      rgb(44, 8, 172),
+      rgb(11, 1, 56)
+    );
+    transform: scale(1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  .card3:hover {
+    background: linear-gradient(
+      to bottom right,
+      rgb(132, 41, 155),
+      rgb(108, 15, 196),
+      rgb(133, 4, 172)
+    );
+    transform: scale(1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  .card4:hover {
+    background: linear-gradient(
+      to bottom right,
+      rgb(189, 60, 221),
+      rgb(130, 20, 233),
+      rgb(151, 4, 196)
+    );
+    transform: scale(1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  .PlanCards p:last-child {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: #90908b;
+  }
+  
+  /* Reason Cards Styling */
+  .Reasons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  /* Card Styling */
+  .cardss {
+    background: #222222;
+    border-radius: 15px;
+    border: 2px solid rgb(43, 42, 42);
+    padding: 20px;
+    width: 300px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Card Content Styling */
+  .cardss p {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 5px;
+  }
+  
+  .cardss img {
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    margin-left: 230px;
+  }
+  
+
+  .faq {
+    margin-top: 20px;
+    width: 95%;
+    align-items: center;
+    font-family: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    scroll-behavior: smooth;
+    
+  }
+  
+  .faq .question {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 30px;
+    margin-bottom: 5px;
+    background-color: #302f2f;
+    border: 1px solid #464545;
+    border-radius: 20px;
+    
+  }
+  
+  .faq .answer {
+    display: none;
+    padding: 10px;
+    background-color: #302f2f;
+    border: 1px solid #464545;
+    margin-bottom: 10px;
+    border-radius: 20px;
+  
+  
+  }
+  
+  .faq input[type="checkbox"]:checked + .answer {
+    display: block;
+    
+  }
+  
+  .faq .faq-toggle {
+    display: none;
+  }
+  
+  .getstarted-btn1 {
+    padding: 0.8rem 1.5rem;
+    height: 30px;
+    width: 200px;
+    border: none;
+    border-radius: 50px 50px;
+    border-color: #fff;
+    border-width: 12px;
+    background-color: #e50914;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 40%;
+    padding: 20px;
+  }
+  
+  .getstarted-btn1:hover {
+    background-color: #f40612;
+  }
+  
+  
+  
+
+  .footer {
+    background-color: black;
+    color: #999;
+    padding: 20px;
+    font-family: inherit;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .footer .footer-top {
+    font-size: 1em;
+    margin-bottom: 20px;
+    margin-left: 260px;
+    text-align: left;
+  }
+  
+  .footer table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    color: #999;
+  }
+  
+  .footer td {
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9em;
+  }
+  
+  .footer a {
+    color: #999;
+  }
+  
+  .language-selector1 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .language-selector1 select {
+    padding-left: 40px;
+    background-color: black;
+    color: white;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .language-selector1 select option {
+    background-color: white;
+    color: black;
+    font-size: 1.2rem;
+  }
+  
+  .fa-solid {
+      position:absolute;
+      margin-left: 90%;
+      margin-top: -3.5%;
+  }
